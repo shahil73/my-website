@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>C Basics</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <header>
+        <h1>C Basics</h1>
+        <nav>
+            <a href="../index.html">Home</a>
+        </nav>
+    </header>
+
+    <section>
+        <h2>Introduction to C</h2>
+        <p>
+            C is a powerful, general-purpose programming language developed by Dennis Ritchie in 1972 at Bell Labs. 
+            It is widely used for system programming, game development, embedded systems, and software development. 
+            C provides low-level access to memory, making it highly efficient. 
+            Many modern programming languages, such as C++, Java, and Python, are influenced by C. 
+            It supports structured programming, functions, pointers, and dynamic memory allocation. 
+            Because of its portability, C is used across various operating systems and hardware platforms.
+        </p>
+
+        <h2>First C Program</h2>
+        <pre><code>
+#include <stdio.h>
+int main() {
+    printf("Hello, World!\n");
+    return 0;
+}
+        </code></pre>
+    </section>
+
+    <section>
+        <h2>10 Example C Programs</h2>
+        <ol>
+            <li>
+                <h3>1. Print "Hello, World!"</h3>
+                <pre><code>
+#include <stdio.h>
+int main() {
+    printf("Hello, World!\n");
+    return 0;
+}
+                </code></pre>
+            </li>
+            <li>
+                <h3>2. Add Two Numbers</h3>
+                <pre><code>
+#include <stdio.h>
+int main() {
+    int a = 5, b = 10;
+    printf("Sum: %d\n", a + b);
+    return 0;
+}
+                </code></pre>
+            </li>
+            <li>
+                <h3>3. Check Even or Odd</h3>
+                <pre><code>
+#include <stdio.h>
+int main() {
+    int num;
+    printf("Enter a number: ");
+    scanf("%d", &num);
+    if (num % 2 == 0)
+        printf("Even\n");
+    else
+        printf("Odd\n");
+    return 0;
+}
+                </code></pre>
+            </li>
+            <li>
+                <h3>4. Find Factorial of a Number</h3>
+                <pre><code>
+#include <stdio.h>
+int factorial(int n) {
+    return (n == 0) ? 1 : n * factorial(n - 1);
+}
+int main() {
+    int num = 5;
+    printf("Factorial: %d\n", factorial(num));
+    return 0;
+}
+                </code></pre>
+            </li>
+            <li>
+                <h3>5. Reverse a Number</h3>
+                <pre><code>
+#include <stdio.h>
+int main() {
+    int num, rev = 0;
+    printf("Enter a number: ");
+    scanf("%d", &num);
+    while (num != 0) {
+        rev = rev * 10 + num % 10;
+        num /= 10;
+    }
+    printf("Reversed Number: %d\n", rev);
+    return 0;
+}
+                </code></pre>
+            </li>
+            <li>
+                <h3>6. Swap Two Numbers Without Using a Temporary Variable</h3>
+                <pre><code>
+#include <stdio.h>
+int main() {
+    int a = 10, b = 20;
+    a = a + b;
+    b = a - b;
+    a = a - b;
+    printf("Swapped: a=%d, b=%d\n", a, b);
+    return 0;
+}
+                </code></pre>
+            </li>
+            <li>
+                <h3>7. Check if a Number is Prime</h3>
+                <pre><code>
+#include <stdio.h>
+int main() {
+    int num, i, flag = 1;
+    printf("Enter a number: ");
+    scanf("%d", &num);
+    for (i = 2; i <= num / 2; i++) {
+        if (num % i == 0) {
+            flag = 0;
+            break;
+        }
+    }
+    if (flag && num > 1)
+        printf("Prime\n");
+    else
+        printf("Not Prime\n");
+    return 0;
+}
+                </code></pre>
+            </li>
+            <li>
+                <h3>8. Fibonacci Series</h3>
+                <pre><code>
+#include <stdio.h>
+int main() {
+    int n = 10, t1 = 0, t2 = 1, nextTerm;
+    printf("Fibonacci Series: ");
+    for (int i = 1; i <= n; i++) {
+        printf("%d ", t1);
+        nextTerm = t1 + t2;
+        t1 = t2;
+        t2 = nextTerm;
+    }
+    return 0;
+}
+                </code></pre>
+            </li>
+            <li>
+                <h3>9. Find the Largest Element in an Array</h3>
+                <pre><code>
+#include <stdio.h>
+int main() {
+    int arr[] = {10, 25, 5, 30, 15}, max = arr[0];
+    for (int i = 1; i < 5; i++) {
+        if (arr[i] > max)
+            max = arr[i];
+    }
+    printf("Largest: %d\n", max);
+    return 0;
+}
+                </code></pre>
+            </li>
+            <li>
+                <h3>10. Count Digits in a Number</h3>
+                <pre><code>
+#include <stdio.h>
+int main() {
+    int num, count = 0;
+    printf("Enter a number: ");
+    scanf("%d", &num);
+    while (num != 0) {
+        count++;
+        num /= 10;
+    }
+    printf("Total Digits: %d\n", count);
+    return 0;
+}
+                </code></pre>
+            </li>
+        </ol>
+    </section>
+</body>
+</html>
