@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>C Programs</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <header>
+        <h1>C Programs</h1>
+        <nav>
+            <a href="../index.html">Home</a>
+        </nav>
+    </header>
+
+    <section>
+        <h2>Find Prime Number</h2>
+        <pre><code>
+#include <stdio.h>
+int main() {
+    int num, i, flag = 0;
+    printf("Enter a number: ");
+    scanf("%d", &num);
+    for (i = 2; i <= num / 2; i++) {
+        if (num % i == 0) {
+            flag = 1;
+            break;
+        }
+    }
+    if (num <= 1) flag = 1;
+    printf(flag ? "Not Prime\n" : "Prime\n");
+    return 0;
+}
+        </code></pre>
+    </section>
+
+    <section>
+        <h2>Swap Two Numbers</h2>
+        <pre><code>
+#include <stdio.h>
+int main() {
+    int a, b, temp;
+    printf("Enter two numbers: ");
+    scanf("%d %d", &a, &b);
+    temp = a;
+    a = b;
+    b = temp;
+    printf("Swapped numbers: %d %d\n", a, b);
+    return 0;
+}
+        </code></pre>
+    </section>
+    
+    <section>
+        <h2>Sum of Digits</h2>
+        <pre><code>
+#include <stdio.h>
+int main() {
+    int num, sum = 0, remainder;
+    printf("Enter a number: ");
+    scanf("%d", &num);
+    while (num != 0) {
+        remainder = num % 10;
+        sum += remainder;
+        num /= 10;
+    }
+    printf("Sum of digits: %d\n", sum);
+    return 0;
+}
+        </code></pre>
+    </section>
+    
+    <section>
+        <h2>Fibonacci Series</h2>
+        <pre><code>
+#include <stdio.h>
+int main() {
+    int n, t1 = 0, t2 = 1, nextTerm;
+    printf("Enter number of terms: ");
+    scanf("%d", &n);
+    printf("Fibonacci Series: ");
+    for (int i = 1; i <= n; i++) {
+        printf("%d ", t1);
+        nextTerm = t1 + t2;
+        t1 = t2;
+        t2 = nextTerm;
+    }
+    return 0;
+}
+        </code></pre>
+    </section>
+    
+    <section>
+        <h2>Check Armstrong Number</h2>
+        <pre><code>
+#include <stdio.h>
+#include <math.h>
+int main() {
+    int num, original, remainder, result = 0, n = 0;
+    printf("Enter a number: ");
+    scanf("%d", &num);
+    original = num;
+    while (original != 0) {
+        original /= 10;
+        n++;
+    }
+    original = num;
+    while (original != 0) {
+        remainder = original % 10;
+        result += pow(remainder, n);
+        original /= 10;
+    }
+    printf((result == num) ? "Armstrong Number\n" : "Not an Armstrong Number\n");
+    return 0;
+}
+        </code></pre>
+    </section>
+    
+    <section>
+        <h2>Find Largest of Three Numbers</h2>
+        <pre><code>
+#include <stdio.h>
+int main() {
+    int a, b, c;
+    printf("Enter three numbers: ");
+    scanf("%d %d %d", &a, &b, &c);
+    if (a >= b && a >= c)
+        printf("Largest: %d\n", a);
+    else if (b >= a && b >= c)
+        printf("Largest: %d\n", b);
+    else
+        printf("Largest: %d\n", c);
+    return 0;
+}
+        </code></pre>
+    </section>
+    
+    <section>
+        <h2>Reverse a Number</h2>
+        <pre><code>
+#include <stdio.h>
+int main() {
+    int num, reversed = 0;
+    printf("Enter a number: ");
+    scanf("%d", &num);
+    while (num != 0) {
+        reversed = reversed * 10 + num % 10;
+        num /= 10;
+    }
+    printf("Reversed Number: %d\n", reversed);
+    return 0;
+}
+        </code></pre>
+    </section>
+</body>
+</html>
